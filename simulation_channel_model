@@ -1,0 +1,63 @@
+===Section VII-B: Single Good Channel, Round Robin Switching Situation===
+channel number 16 (indexed as [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+number of users: 1
+channel set activation seq: [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15]]
+switching probability: p=0.75, 0.8, 0.85, 0.9, 0.95
+
+
+===Section VII-C: Single Good Channel, Arbitrary Switching Situation===
+channel number 16 (indexed as [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+number of users: 1
+swithcing probability: p=0.9
+channel set activation seq: cases
+	[[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15]]
+	[[0], [2], [4], [6], [8], [10], [12], [14], [1], [3], [5], [7], [9], [11], [13], [15]]
+	[[0], [6], [12], [1], [7], [13], [2], [8], [14], [3], [9], [15], [4], [10], [5], [11]]
+	[[0], [9], [1], [10], [2], [11], [3], [12], [4], [13], [5], [14], [6], [15], [7], [8]]
+	[[0], [12], [1], [13], [2], [14], [3], [15], [4], [11], [5], [10], [6], [9], [8], [7]]
+	[[13], [9], [11], [8], [10], [7], [12], [2], [15], [6], [3], [14], [0], [5], [4], [1]]
+	[[1], [12], [7], [9], [4], [10], [13], [8], [11], [0], [6], [2], [5], [15], [3], [14]]
+	[[14], [6], [3], [0], [9], [15], [10], [5], [11], [4], [2], [8], [12], [1], [7], [13]]
+
+
+===Section VII-D" Multiple Good Channels Situation===
+channel number 16 (indexed as [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+number of users: 1
+swithcing probability: p=0.9
+channel set activation seq cases:
+	*round robin cases
+	[[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15]]
+	[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15]]
+	[[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
+	[[0, 1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14, 15]]
+
+	*arbitrary switching cases
+	[[13], [9], [11], [8], [10], [7], [12], [2], [15], [6], [3], [14], [0], [5], [4], [1]]
+	[[13, 9], [11, 8], [10, 7], [12, 2], [15, 6], [3, 14], [0, 5], [4, 1]]
+	[[13, 9, 11, 8], [10, 7, 12, 2], [15, 6, 3, 14], [0, 5, 4, 1]]
+	[[13, 9, 11, 8, 10, 7, 12, 2], [15, 6, 3, 14, 0, 5, 4, 1]]
+
+
+===Section VIII-A: Perfectly Correlated Scenario===
+channel number 16 (indexed as [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+number of users: 1
+channel Markov transition probability for any independ channel: [[0.8, 0.2], [0.2, 0.8]]
+	*perfectly positive correlation cases, i.e., all other channels in the same set are exactly the same as the indepent chanel in the same set
+	[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], [15]] # 2 independ channels: channel 0 and channel 15
+	[[0, 1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14, 15]] # 2 independ channels: channel 0 and channel 8
+	[[0, 1, 7, 9], [2, 5, 8, 10], [3, 4, 6, 11, 12, 13, 14, 15]] # 3 independ channels: channel 0, channel 2 and channel 3
+
+	*perfectly negative correlation cases, i.e., all other channels in the same set are exactly opposite the indepent chanel in the same set
+	[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], [15]] # 2 independ channels: channel 0 and channel 15
+	[[0, 1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14, 15]] # 2 independ channels: channel 0 and channel 8
+	[[0, 1, 7, 9], [2, 5, 8, 10], [3, 4, 6, 11, 12, 13, 14, 15]] # 3 independ channels: channel 0, channel 2 and channel 3
+
+
+===Section VIII-B: Real Data Trace===
+See the other file 'real_data_trace.csv'
+
+===Section X: Multiple User Cases===
+channel number: 8 (indexed as [0, 1, 2, 3, 4, 5, 6, 7])
+number of users: 2 or 3 or 8
+channel set activation seq: [[0,1,2,3,4,5], [1,2,3,4,5,6], [2,3,4,5,6,7], [3,4,5,6,7,0], [4,5,6,7,0,1],[5,6,7,0,1,2], [6,7,0,1,2,3], [7,0,1,2,3,4]]
+switching probability: p=0.9
